@@ -27,5 +27,6 @@
 *.lib
 
 # Others
-.pdb
-.ilk
+*.pdb
+*.ilk
+.vscode/*
