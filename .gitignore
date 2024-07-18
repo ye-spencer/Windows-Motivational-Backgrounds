@@ -27,3 +27,5 @@
 *.lib
 
 # Others
+.pdb
+.ilk
