@@ -7,3 +7,4 @@ Should have a option to add or delete motivational and lessons
 
 TODO
  - explore connection with windows schedule and the win32 library
+ - args parser
