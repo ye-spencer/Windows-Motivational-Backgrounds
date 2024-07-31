@@ -1,5 +1,5 @@
 # Windows-Motivational-Backgrounds
-This program will update your windows background with an image with a lesson that you have put in there
+This program will update your windows background with an image with a lesson that you have put in there. The images will be created using Python, then updated using windows time scheduler in C++
 
 
 Interface:
