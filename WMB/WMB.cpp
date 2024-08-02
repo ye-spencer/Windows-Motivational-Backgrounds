@@ -1,36 +1,25 @@
 /* WMB.cpp
  * Author: Spencer Ye
  * Last Edited: August 2nd, 2024
- * Version: 0.3.1
+ * Version: 1.0.0
  */
 
 #include <windows.h>
 #include <iostream>
 #include <filesystem>
 #include <string>
+#include <cstdlib>
 
 bool setWallpaper(std::string imageName);
+std::string pickImage();
 
 namespace fs = std::filesystem;
 
 int main()
 {
-    std::cout << "HELLO" << std::endl;
-    setWallpaper("JHU_Admission.png");
+    std::string path = pickImage();
 
-
-    size_t size = 0;
-
-    // Looping until all the items of the directory are exhausted
-    for (const auto& entry : fs::directory_iterator(".\\images")) {
-
-        // Converting the path to a string
-        std::string str = entry.path().string();
-
-        std::cout << str << "DIFF" << std::endl;
-        size++;
-
-    }
+    setWallpaper(path);
 }
 
 bool setWallpaper(std::string imageName)
@@ -45,4 +34,31 @@ bool setWallpaper(std::string imageName)
     const wchar_t * finalFile = wideStr.c_str();
 
     return SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*) finalFile, SPIF_UPDATEINIFILE);
+}
+
+std::string pickImage()
+{
+    size_t size = 0;
+
+    // Get directory size, unforunately no faster way to go about this
+    for (const auto& entry : fs::directory_iterator(".\\images"))
+    {
+        size++;
+    }
+
+    // Generate a random 
+    srand(time(0));
+    int num = rand() % size;
+
+    // Looping until we get to the one we got
+    for (const auto & entry : fs::directory_iterator(".\\images")) 
+    {
+        if (num == 0)
+        {
+            return entry.path().string();
+        }
+        num--;
+
+    }
+    return "ERROR COULD NOT PICK IMAGE";
 }
