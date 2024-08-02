@@ -17,7 +17,8 @@ This project will create and automatically update a Windows device's background 
 ## Automatically updating the background
 
 1. Create an automatic Windows scheduled event [See Article](https://www.windowscentral.com/how-create-automated-task-using-task-scheduler-windows-10)
-   - The .exe to be used is the * *WMB-1.0.2 Release.exe* * located in the **WMB** folder
+   - The .exe to be used is the *WMB-1.0.2 Release.exe* located in the **WMB** folder
+   - For the "Start In", put the directory that the .exe file is in
 
 ## Further customizations
  - You can upload any .ttf file into the **fonts** folder, and update the main.py file to use your new file
