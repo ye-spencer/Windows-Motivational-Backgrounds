@@ -1,7 +1,7 @@
 /* WMB.cpp
  * Author: Spencer Ye
  * Last Edited: August 2nd, 2024
- * Version: 1.0.1
+ * Version: 1.0.2
  */
 
 #include <windows.h>
