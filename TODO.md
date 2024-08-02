@@ -3,6 +3,7 @@ A project is never truly done, here are some future steps that I, or anyone else
 # New Features
  + Create a method for deleting quotes
  + Find way of automatically installing into Windows Time Scheduler
+ + Have custom windows backgrounds, or even randomly combine quotes and backgrounds
 
 # Optimization
  + Store quotes without saving the entire background to be more space efficient
