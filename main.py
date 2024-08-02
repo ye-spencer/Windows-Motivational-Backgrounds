@@ -1,12 +1,12 @@
 # main.py
 # Author: Spencer Ye
 # Last Modified: August 2nd, 2024
-# Version: 0.3.0
+# Version: 1.0.0
 
 from PIL import Image, ImageDraw, ImageFont
 import pathlib
 import pyautogui
-
+import sys
 
 # BEGIN CONSTANTS
 
@@ -38,12 +38,16 @@ def generate_image(text : str):
     draw.text(((W - w)/2, (H - h)/2.25), text, font=font, fill="black")
 
     # Save the image in our directory
-    image.save(str(curr_directory) + "\\WMB\\images\\outst.jpg")
+    image.save(curr_directory + "\\WMB\\images\\" + text + ".jpg")
 
 def main():
-    # TODO: take in text as an argument
-    text = "Hello, World!"
-    generate_image(text)
+    # Ensure we have enough arguments
+    if (len(sys.argv) != 2):
+        print("Usage: python main.py \"Quote/Tidbit/Etc.\"")
+        exit(-1)
+    
+    # Generate the image and save it in the proper folder
+    generate_image(sys.argv[1])
 
 if __name__ == "__main__":
     main()
