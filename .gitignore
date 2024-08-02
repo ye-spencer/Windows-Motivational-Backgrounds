@@ -2,6 +2,6 @@ WMB/.vs/*
 WMB/WMB/*
 WMB/x64/*
 WMB/WMB.v*
+WMB/images/*.jpg
 *.sln
-*.jpg
 *.png
